@@ -6,78 +6,95 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
+        enunciado: "Quando você sobe no palco, o que te impulsiona?",
         alternativas: [
             {
-                texto: "Isso é assustador!",
-                afirmacao: "afirmação"
+                texto: "Eu sou o centro das atenções e adoro mostrar meu talento para o mundo!",
+                diva: "Beyoncé" // Poder, presença e empoderamento.
             },
             {
-                texto: "Isso é maravilhoso!" ,
-                afirmacao: "afirmação" 
-            }
-            
-        ]
-    },
-    {
-        enunciado: "Com a descoberta desta tecnologia, chamada Inteligência Artificial (IA), uma professora de tecnologia da escola decidiu fazer uma sequência de aulas sobre esta tecnologia. No fim de uma aula ela pede que você escreva um trabalho sobre o uso de IA em sala de aula. Qual atitude você toma?",
-        alternativas: [
-            {
-                texto: "Utiliza uma ferramenta de busca na internet que utiliza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento.",
-                afirmacao: "afirmação"
-            },
-            {
-                texto: "Escreve o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-                afirmacao: "afirmação"
+                texto: "Eu sou única e exalo confiança, criando um show imersivo para todos.",
+                diva: "Lady Gaga" // Inovação, estilo excêntrico e autenticidade.
             }
         ]
     },
     {
-        pergunta: "Após a elaboração do trabalho, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona?",
+        enunciado: "Qual é o seu estilo de música preferido?",
         alternativas: [
             {
-                texto: "Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-                afirmacao: "afirmação"
+                texto: "Eu gosto de músicas dançantes com uma batida forte, algo que faz todo mundo dançar!",
+                diva: "Rihanna" // Música pop e R&B com atitude e energia.
             },
             {
-                texto: "Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
-                afirmacao: "afirmação"
+                texto: "Eu adoro músicas com letras profundas e vocais poderosos. A emoção é o que me move.",
+                diva: "Adele" // Voz poderosa e emotiva, com uma conexão profunda com os fãs.
             }
-            
         ]
     },
     {
-        enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
+        enunciado: "Qual dessas atitudes mais combina com você?",
         alternativas: [
             {
-                texto: "Criar uma imagem utilizando uma plataforma de design como o Paint.",
-                afirmacao: "afirmação"
+                texto: "A minha atitude é de autossuficiência. Não dependo de ninguém para brilhar.",
+                diva: "Madonna" // Revolução, independência e quebras de tabus.
             },
             {
-                texto: "Criar uma imagem utilizando um gerador de imagem de IA.",
-                afirmacao: "afirmação"
+                texto: "Eu sou bem-humorada e adoro espalhar boas vibrações por onde passo.",
+                diva: "Katy Perry" // Alegria, diversão e muita cor.
             }
-            
-            
         ]
     },
     {
-        enunciado: "Você tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda de uma IA. O problema é que o trabalho está totalmente igual ao do chat. O que você faz?",
+        enunciado: "Você tem que escolher um visual para o seu grande show. Qual é o seu estilo?",
         alternativas: [
             {
-                texto: "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
-                afirmacao: "afirmação"
+                texto: "Roupas ousadas, cheias de brilho, glamour e que causam impacto!",
+                diva: "Beyoncé" // Poder, força e presença de palco.
             },
             {
-                texto:"O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
-                afirmacao: "afirmação"
+                texto: "Um estilo super fashion, misturando diferentes culturas e épocas para criar algo novo.",
+                diva: "Lady Gaga" // Estilo excêntrico, único e artístico.
             }
         ]
     },
+    {
+        enunciado: "Como você lida com a fama?",
+        alternativas: [
+            {
+                texto: "Eu sou uma lenda viva. A fama é minha, mas sempre com muito trabalho por trás.",
+                diva: "Madonna" // Rainha do pop, sempre no controle da sua imagem.
+            },
+            {
+                texto: "Eu não ligo para o que dizem. Eu sou eu mesma, e todos têm que aceitar isso.",
+                diva: "Rihanna" // Rebeldia, atitude e liberdade para ser quem é.
+            }
+        ]
+    },
+    {
+        enunciado: "Se você tivesse que fazer uma colaboração musical, qual seria sua escolha?",
+        alternativas: [
+            {
+                texto: "Eu escolheria alguém com muita energia e que seja uma estrela como eu!",
+                diva: "Beyoncé" // Poder em palco, colaboração com outras estrelas.
+            },
+            {
+                texto: "Eu adoraria criar algo super criativo com um artista alternativo, algo fora da caixa.",
+                diva: "Lady Gaga" // Colaborações artísticas e revolucionárias.
+            }
+        ]
+    }
 ];
+
 let atual = 0;
 let perguntaAtual;
-let historiaFinal = "";
+let resultados = {
+    "Beyoncé": 0,
+    "Lady Gaga": 0,
+    "Rihanna": 0,
+    "Adele": 0,
+    "Madonna": 0,
+    "Katy Perry": 0
+};
 
 function mostraPergunta() {
     if (atual >= perguntas.length) {
@@ -100,15 +117,17 @@ function mostraAlternativas() {
 }
 
 function respostaSelecionada(opcaoSelecionada) {
-    const afirmacoes = opcaoSelecionada.afirmacao;
-    historiaFinal += afirmacoes + " ";
+    // Incrementa o contador da diva escolhida
+    resultados[opcaoSelecionada.diva]++;
     atual++;
     mostraPergunta();
 }
 
 function mostraResultado() {
-    caixaPerguntas.textContent = "Em 2049...";
-    textoResultado.textContent = historiaFinal;
+    let divaPopEscolhida = Object.keys(resultados).reduce((a, b) => resultados[a] > resultados[b] ? a : b);
+
+    caixaPerguntas.textContent = `Você é a ${divaPopEscolhida}!`;
+    textoResultado.textContent = `Seu estilo e atitudes se alinham com a da diva ${divaPopEscolhida}, a verdadeira estrela pop!`;
     caixaAlternativas.textContent = "";
 }
 
