@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 :root{
-    --cor-fundo: #eb70ad; /* Fundo mais suave para dar um toque sofisticado */
-    --cor-principal: #ff66cc; /* Rosa vibrante, uma cor associada a pop e ousadia */
-    --cor-secundaria: #ffcc00; /* Dourado metálico para um toque de glamour */
-    --cor-destaque: #000000; /* Preto clássico para criar contraste e sofisticação */
-    --cor-texto: #ffffff; /* Texto branco para destacar sobre o fundo */
-    --cor-hover: #ffd700; /* Dourado que brilha ao passar o mouse */
+  --cor-fundo: #6600cc; /* Roxo vibrante para um fundo ousado e sofisticado, com um toque dramático */
+--cor-principal: #ff4081; /* Rosa choque, super vibrante e moderno, dando aquele toque pop e energizante */
+--cor-secundaria: #f0a500; /* Dourado metálico intenso, perfeito para trazer brilho sem ser excessivo */
+--cor-destaque: #1f1f1f; /* Preto carvão suave para contrastar sem ser tão agressivo quanto um preto puro */
+--cor-texto: #ffffff; /* Branco puro para contraste e legibilidade no fundo roxo e rosa */
+--cor-hover: #ff79b0; /* Rosa suave para o efeito de hover, dando uma sensação de luminosidade e leveza */
+
 }
 
 body {
